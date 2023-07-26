@@ -1,0 +1,180 @@
+:root {
+  --clr-primary-background: hsl(233, 47%, 7%);
+  --clr-primary-article-background: hsl(244, 38%, 16%);
+  --clr-primary-accent: hsl(277, 64%, 61%);
+
+  --clr-neutral-title: hsl(0, 0%, 100%);
+  --clr-neutral-paragraph: hsla(0, 0%, 100%, 0.75);
+  --clr-neutral-tag: (0, 0%, 100%, 0.6);
+
+  --ff-base: "Inter", sans-serif;
+  --ff-secondary: "Lexend Deca", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 700; /*ONLY stats tags*/
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*GENERAL STYLING*/
+
+body {
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+    font-size: 0.975rem;
+    color: var(--clr-neutral-paragraph);
+    background-color: var(--clr-primary-background);
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    margin: 1rem;
+}
+
+/*TYPOGRAPHY*/
+
+.title_accent {
+    color: var(--clr-primary-accent);
+}
+
+/*IMAGE STYLING*/
+
+.product_image {
+    background-color: var(--clr-primary-accent);
+}
+
+img {
+    mix-blend-mode: multiply;
+    opacity: 70%;
+}
+
+
+/*CARD STYLING*/
+.product {
+    background-color: var(--clr-primary-article-background);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+@media (min-width: 1220px){
+    .product {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        max-width: 1100px;
+    }
+}
+
+.product_content {
+    text-align: center;
+    display: grid;
+    gap: 1.7rem;
+    padding: 2rem;
+}
+
+
+@media (min-width: 1220px) {
+    .product_content {
+        order: -1;
+        padding: 5rem 4rem;
+        text-align: left;
+    }
+}
+
+.flex-group_stats {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 0.8rem;
+}
+
+@media (min-width: 1220px){
+    .flex-group_stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        line-height: 3;
+        margin-top: 3rem;
+    }
+}
+
+.product_title {
+    font-size: 1.8rem;
+    font-weight: var(--fw-bold);
+    line-height: 1.2;
+    color: var(--clr-neutral-title);
+}
+
+.stats-tag {
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-regular);
+    font-size: 0.8rem;
+}
+
+
+
+
